@@ -9,9 +9,12 @@ const userSchema = new mongoose.Schema({
     email: {
         type: String,
         require: true
-
-
     },
+    category:{
+        type: String,
+        require: true
+    },
+
     grievance: {
         type: String,
         require: true
