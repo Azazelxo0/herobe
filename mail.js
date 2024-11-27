@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer')
 
-exports.mailsend = (name, email, grievance) => {
+exports.mailsend = (name, email,category,grievance) => {
     const nodemailer = require('nodemailer');
 
     const transporter = nodemailer.createTransport({
@@ -15,7 +15,7 @@ exports.mailsend = (name, email, grievance) => {
         from: email, // Sender's email
         to: 'hero99492@gmail.com', // Superhero's email
         subject: `New Grievance Submitted by ${name}`,
-        text: `You have received a new grievance:\n\nName: ${name}\nEmail: ${email}\nGrievance: ${grievance}`
+        text: `You have received a new grievance:\n\nName: ${name}\nEmail: ${email}\nGrievance: ${grievance}\nThreat levels:${category}`
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
